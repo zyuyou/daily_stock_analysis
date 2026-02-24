@@ -53,10 +53,14 @@ jobs:
       
       - name: 执行股票分析
         env:
+          TZ: Asia/Shanghai
+          
           # ==========================================
           # AI 配置
           # ==========================================
+          # AIHubmix AI（推荐）
           AIHUBMIX_KEY: ${{ secrets.AIHUBMIX_KEY }}
+          
           # Gemini AI（主选）
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || secrets.GEMINI_MODEL || 'gemini-3-flash-preview' }}
